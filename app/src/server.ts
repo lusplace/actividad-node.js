@@ -2,7 +2,9 @@ import dotenv from "dotenv";
 dotenv.config();
 import http from "node:http";
 import app from "./app";
-const PORT = process.env.NODE_ENV === "production" ? process.env.PORT : 1234;
+console.log(process.env.NODE_ENV)
+
+const PORT = process.env.NODE_ENV === "production" ? process.env.NODE_PORT : 1234;
 
 // Iniciar el servidor
 const server = http.createServer(app);
