@@ -1,0 +1,17 @@
+services:
+  postgresdb:
+    image: postgres
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASSWORD
+      - POSTGRES_DB=$DB_NAME
+    ports:
+      - $DB_PORT:5432
+    volumes:
+      - ../db:/docker-entrypoint-initdb.d:ro
+      - db:/var/lib/postgres
+
+volumes: 
+  db:
