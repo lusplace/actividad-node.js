@@ -11,11 +11,12 @@ export default class GameService{
     constructor(){
     }
 
-    async get({ id }: {id: number}) {
-        if(!id){
-            const games = await gameRepository.findAll();
-            return games || [];
-        }
+    async getAll() {
+        const games = await gameRepository.findAll();
+        return games || [];
+    }
+
+    async getById({ id }: {id: number}) {
         const game = await gameRepository.findById(id);
         if (!game) throw new AppError("Game no encontrado", 404);
         return game;

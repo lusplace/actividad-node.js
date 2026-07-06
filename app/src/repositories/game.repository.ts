@@ -1,4 +1,3 @@
-import { STRING } from "@sequelize/core/_non-semver-use-at-your-own-risk_/abstract-dialect/data-types.js";
 import { queryGame } from "../db/connection";
 import { Game } from "../models/Game.model";
 

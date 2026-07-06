@@ -21,7 +21,7 @@ export default class TokenServiceImpl implements TokenService{
         try {
             return jwt.verify(token, this.jwtSecret);
         } catch (err) {
-            throw new Error("Invalid token");
+            throw new Error("Invalid token aaaa" +  err);
         }
     }
 }

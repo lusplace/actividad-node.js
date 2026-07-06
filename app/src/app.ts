@@ -26,6 +26,7 @@ const jwtExpiration = Number(process.env.JWT_EXPIRATION) ?? 86400;
 if (jwtSecret === undefined || isNaN(jwtExpiration)){
     throw new Error('JWT_SECRET Y JWT_EXPIRATION DEBEN TENER VALORES VÁLIDOS EN EL ARCHIVO .env');
 }
+
 const router = createRouter(String(jwtSecret), jwtExpiration);
 
 app.use("/api", router);

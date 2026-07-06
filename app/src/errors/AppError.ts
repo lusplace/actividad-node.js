@@ -17,3 +17,9 @@ export class EmptyDataError extends AppError {
         super(message, 404);
     }
 }
+
+export class WrongDataType extends AppError {
+    constructor(message = "Peticion mal construida") {
+        super(message, 400);
+    }
+}

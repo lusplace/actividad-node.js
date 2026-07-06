@@ -3,13 +3,13 @@ import { AppError } from "../errors/AppError";
 import * as userRepository from "../repositories/user.repository";
 import { User } from "../models/User.model";
 import TokenService from "./token.service";
+import TokenServiceImpl from "./impl/token.service.impl";
 
 //import * as refreshTokenService from "./refreshToken.service.js";
 
 export default class AuthService{
-    private tokenService: TokenService;
 
-    constructor(tokenService: TokenService){
+    constructor(private tokenService: TokenService){
         this.tokenService = tokenService;
     }
 

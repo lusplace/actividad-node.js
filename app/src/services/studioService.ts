@@ -13,14 +13,15 @@ export default class StudioService{
         this.gameService = gameService;
     }
 
-    async get({ id }: {id: number}) {
-        if(!id){
-            const studios = await studioRepository.findAll();
-            return studios || [];
-        }
-        const studio = await studioRepository.findById(id);
-        if (!studio) throw new AppError("Studio no encontrado", 404);
-        return studio;
+    async getAll() {
+        const games = await studioRepository.findAll();
+        return games || [];
+    }
+
+    async getById({ id }: {id: number}) {
+        const game = await studioRepository.findById(id);
+        if (!game) throw new AppError("Game no encontrado", 404);
+        return game;
     }
 
     async postStudio({ name }: {name: string}) {

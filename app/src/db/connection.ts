@@ -21,21 +21,18 @@ export const client = new Client({
 
 export async function
   queryUser (text: string, params: any) : Promise<QueryResult<User>>{
-    console.log(text, params);
     const res = (await client.query(text, params));
     return res;
   };
 
 export async function
   queryStudio (text: string, params: any) : Promise<QueryResult<Studio>>{
-    console.log(text, params);
     const res = (await client.query(text, params));
     return res;
   };
 
 export async function
   queryGame (text: string, params: any) : Promise<QueryResult<Game>>{
-    console.log(text, params);
     const res = (await client.query(text, params));
     return res;
   };
